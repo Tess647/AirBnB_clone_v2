@@ -24,7 +24,7 @@ class FileStorage:
             for key, value in self.__objects.items():
                 if type(value) == cls:
                     my_dict[key] = value
-                return my_dict
+            return my_dict
         return self.__objects
 
     def new(self, obj):
@@ -53,16 +53,16 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as f:
                 temp = json.load(f)
                 for key, val in temp.items():
-                        self.all()[key] = classes[val['__class__']](**val)
+                    self.all()[key] = classes[val['__class__']](**val)
         except FileNotFoundError:
             pass
 
     def delete(self, obj=None):
-        """Deletes object from __objects"""
+        """Deletes and object from __objects"""
         if (obj):
             key = "{}.{}".format(type(obj).__name__, obj.id)
             del self.__objects[key]
-    
+
     def close(self):
         """Calls reload method for deserializing
         the JSON file to objects
