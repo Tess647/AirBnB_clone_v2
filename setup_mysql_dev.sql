@@ -1,6 +1,6 @@
---creates a database a new user with specified permissions
-CREATE DATABASE IF NOT EXISTS hbnb_test_db;
+-- Creates a new user and a new database
+CREATE DATABASE IF NOT EXISTS hbnb_dev_db;
+CREATE USER IF NOT EXISTS 'hbnb_dev'@'localhost' IDENTIFIED BY 'hbnb_dev_pwd';
 FLUSH PRIVILEGES;
-CREATE USER IF NOT EXISTS 'hbnb_test'@'loaclhost' IDENTIFIED BY 'hbnb_test_pwd';
-GRANT ALL PRIVILEGES ON hbnb_test_db.* TO 'hbnb_test'@'localhost';
-GRANT SELECT ON performance_schema.* TO 'hbnb_test'@'localhost';
+GRANT ALL PRIVILEGES ON hbnb_dev_db.* TO 'hbnb_dev'@'localhost';
+GRANT SELECT ON performance_schema.* TO 'hbnb_dev'@'localhost';
