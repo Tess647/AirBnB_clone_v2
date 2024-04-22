@@ -64,7 +64,7 @@ class test_fileStorage(unittest.TestCase):
     def test_reload(self):
         """ Storage file is successfully loaded to __objects """
         new = BaseModel()
-        new.save()
+        storage.save()
         storage.reload()
         loaded = storage.all().get('BaseModel.' + new.id)
         self.assertIsNotNone(loaded)
