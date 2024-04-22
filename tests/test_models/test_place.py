@@ -14,9 +14,9 @@ class test_Place(test_basemodel):
         self.value = Place
 
     def test_city_id(self):
-        """ """
+        """Test if city_id is of type str"""
         new = self.value()
-        self.assertEqual(type(new.city_id), str)
+        self.assertIsInstance(type(new.city_id), str)
 
     def test_user_id(self):
         """ """
@@ -29,9 +29,9 @@ class test_Place(test_basemodel):
         self.assertEqual(type(new.name), str)
 
     def test_description(self):
-        """ """
+        """Test if description is of type str"""
         new = self.value()
-        self.assertEqual(type(new.description), str)
+        self.assertIsInstance(type(new.description), str)
 
     def test_number_rooms(self):
         """ """
@@ -41,10 +41,10 @@ class test_Place(test_basemodel):
     def test_number_bathrooms(self):
         """ """
         new = self.value()
-        self.assertEqual(type(new.number_bathrooms), int)
+        self.assertIsInstance(type(new.number_bathrooms), int)
 
     def test_max_guest(self):
-        """ """
+        """Test if max_guest is of type int"""
         new = self.value()
         self.assertEqual(type(new.max_guest), int)
 
@@ -54,14 +54,14 @@ class test_Place(test_basemodel):
         self.assertEqual(type(new.price_by_night), int)
 
     def test_latitude(self):
-        """ """
+        """Test if latitude is of type float"""
         new = self.value()
-        self.assertEqual(type(new.latitude), float)
+        self.assertIsInstance(type(new.latitude), float)
 
     def test_longitude(self):
-        """ """
+        """Test if longitude is of type float"""
         new = self.value()
-        self.assertEqual(type(new.latitude), float)
+        self.assertIsInstance(type(new.latitude), float)
 
     def test_amenity_ids(self):
         """ """
